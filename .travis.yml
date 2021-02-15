@@ -1,3 +1,6 @@
+arch:
+  - amd64
+  - ppc64le
 language: python
 
 addons:
@@ -24,23 +27,62 @@ matrix:
   include:
     - python: 2.7
       env: TACKPY=true
+      arch: amd64
     - python: 3.4
       env: TACKPY=true
+      arch: amd64
     - python: 2.7
       env: M2CRYPTO=true
+      arch: amd64
 # no M2crypto on Python 3
     - python: 2.7
       env: PYCRYPTO=true
+      arch: amd64
     - python: 3.4
       env: PYCRYPTO=true
+      arch: amd64
     - python: 2.7
       env: GMPY=true
+      arch: amd64
     - python: 3.4
       env: GMPY=true
+      arch: amd64
     - python: 2.7
       env: M2CRYPTO=true PYCRYPTO=true GMPY=true
+      arch: amd64
     - python: 3.4
       env: PYCRYPTO=true GMPY=true
+      arch: amd64
+      
+    
+    - python: 2.7
+      env: TACKPY=true
+      arch: ppc64le
+    - python: 3.4
+      env: TACKPY=true
+      arch: ppc64le
+    - python: 2.7
+      env: M2CRYPTO=true
+      arch: ppc64le
+# no M2crypto on Python 3
+    - python: 2.7
+      env: PYCRYPTO=true
+      arch: ppc64le
+    - python: 3.4
+      env: PYCRYPTO=true
+      arch: ppc64le
+    - python: 2.7
+      env: GMPY=true
+      arch: ppc64le
+    - python: 3.4
+      env: GMPY=true
+      arch: ppc64le
+    - python: 2.7
+      env: M2CRYPTO=true PYCRYPTO=true GMPY=true
+      arch: ppc64le
+    - python: 3.4
+      env: PYCRYPTO=true GMPY=true
+      arch: ppc64le
 
 before_install:
   - |
